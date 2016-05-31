@@ -28,16 +28,16 @@ def add_phonenumber(phone_number):
 
 def get_phonenumberid(phone_number):
   try:
-    q = DBsession.query(PhoneNumbers.id).
-      filter(PhoneNumbers.phone_number==phone_number).scalar()
+    q = DBsession.query(PhoneNumbers.id).filter(PhoneNumbers.phone_number
+      ==phone_number).scalar()
     return q
   except Exception as e:
     DBsession.rollback()
 
 def remove_phonenumber(phone_number):
   try:
-    num = DBsession.query(PhoneNumbers).
-      filter_by(phone_number=phone_number).scalar()
+    num = DBsession.query(PhoneNumbers).filter_by(
+      phone_number=phone_number).scalar()
     DBsession.delete(num)
     DBsession.commit()
     return True
