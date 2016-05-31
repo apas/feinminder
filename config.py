@@ -1,0 +1,7 @@
+twilio_account = "enter-value"
+twilio_token = "enter-value"
+from_twilio = "enter-value"
+receipient1 = "enter-value"
+heroku_pg = "enter-value"
+auth_u = "enter-value"
+auth_p = "enter-value"
