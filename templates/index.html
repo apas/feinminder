@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <title>Feinminder Admin</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="header">
+    <h1>Feinminder admin panel</h1>
+  </div>
+
+  <div class="container">
+    <div class="grid1">
+      <h2>Send a text message</h2>
+      <p><i>To: all subscribed customers</i></p>
+      <form id="form">
+        <span>
+          <p>
+            Message: <input id="textarea" type="text" name="text_msg" maxlength="160">
+            <input type="submit" value="Send">
+            <img style="display:none;" src="/static/check.svg">
+            <span id="characters"></span>
+          </p>
+        </span>
+      </form>
+    </div>
+
+    <div class="grid2">
+      <h2>Subscribed customers</h2>
+      <ol>
+        {% for subscriber in subscribers %}
+        <li>{{ subscriber.phone_number }}</li>
+        {% endfor %}
+      </ol>
+    </div>
+
+  </div>
+</body>
+
+</html>
